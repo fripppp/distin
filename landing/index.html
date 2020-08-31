@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Distin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+body {
+	background-color: rgb(245,238,210);
+}
+.style1 {
+	font-size: xx-large;
+	font-weight: bold;
+}
+li { 
+	list-style-image: url(index_files/blob.gif);
+	font-size: 20px;
+	 }
+.update {
+	font-family: Verdana;
+	font-size:2;
+}
+   a:link, a:visited, a:active { color: #008080;
+       text-decoration: none;
+     }
+   a:hover {
+   		color: #010010;
+       text-decoration: none;
+   }
+   hr{max-width:800px; width:80%}
+</style>
+</head>
+<body>
+	<p align="center"><img src="index_files/orangecraft.gif" width="468" height="60"></p>
+	<div align="center" width="100%">
+		<tbody><tr>
+		<td align="CENTER"><a href="/landing"><img name="home" alt="Home" src="index_files/bluehome.gif" border="0"></a></td>
+		<td align="CENTER"><a href="/pee.htm"><img name="news" alt="News" src="index_files/bluenews.gif" border="0"></a></td>
+		</tr>
+		</tbody></table>
+	</div>
+	<div align=center width="100%" float="left">
+		<table border="0" align="center">
+<tbody><tr>
+<td valign="TOP">
+	<img src="index_files/albumheader.jpg" border="0">
+	<div style=" padding-left: 50px;">
+	<a href="poop"><li>Pee</li></a>
+	<a href="poop"><li>Pee</li></a>
+	</div>
+</td>
+<td valign="BOTTOM" align="CENTER"><a href="/"><img src="index_files/albumleg.jpg" border="0"></a></td>
+</tr>
+</tbody></table>
+</div>
+	
+
+
+<div align="center">
+<hr>
+<font size="2" face="Verdana" color="Maroon"><b>Thinking of </b></font>
+<font size="2" face="Verdana" color="Teal"><b><a text-decoration="none" href="/frippssecret">YOU</a></b></font>
+<font size="2" face="Verdana" color="maroon"><b> at a time like this...</b></font>
+<hr>
+<p>
+<font size="4" face="Verdana" color="Maroon"><b><a target="_self" href="pee">Album of the Week</a><br></b></font>
+<div class="alcontainer" style="max-width: 800px;">
+<table border="0" align="center">
+<tbody><tr>
+<td valign="BOTTOM">
+	<div class="albumoftheday" float="left"></div>
+</td>
+<td valign="TOP" align="LEFT" style="padding-left: 50px;">
+<font size="4" face="Verdana" color="Maroon"><b>
+	<div class="albumtitle"></div>
+</b></font>
+<font size="2" face="Verdana" color="Red">
+	<div class="albuminfo">Unable to fetch description data.</div>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	const KEY = "76b69cca65fe7a155fc056ceb10d274b"
+	const NAME = "fripppp"
+
+	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&limit=1&period=7day", function(data) {
+        const cum = data
+        const MBID = cum.topalbums.album[0].mbid
+		$(".albumoftheday").html("<img src='" + cum.topalbums.album[0].image[3]["#text"] + "' width=200px height=200px>")
+		$(".albumtitle").html("<a href='" + cum.topalbums.album[0].artist.url + "''>" + cum.topalbums.album[0].artist.name + "</a> - <a href='" + cum.topalbums.album[0].url + "'>" + cum.topalbums.album[0].name + "</a>")
+		const art = cum.topalbums.album[0].artist.name
+		const al = cum.topalbums.album[0].name
+		$.getJSON("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + KEY + "&artist=" + art + "&album=" + al + "&format=json", function(data) {
+        	const poop = data
+        	$(".albuminfo").html(poop.album.wiki.summary)
+		});
+    });
+
+	
+</script>
+</p>
+<hr>
+<p><font size="2" face="Arial" color="Teal"><b>Shop for Distin products at</b></font></p>
+<p><a href="//www.cdnow.com/switch/from=sr-2195264/target=buyweb_products/ArtistID=DISTIN" target="_blank"><img src="index_files/cdnow.gif" alt="CD NOW" border="0"></a></p>
+<hr>
+<font size="3" face="Arial"><b>
+<br>
+</b></font><font size="2" face="Arial">This site is heard with <a target="_blank" href="https://www.real.com/realplayerdownload"><img src="index_files/freeplayer_g2.gif" alt="Freeplayer" border="0" align="ABSMIDDLE"></a> download it FREE <b>
+</b></font>
+<br>
+<br>
+<hr>
+<br>
+</div>
+	<div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/c.php?d=5&id=124098&s=50' border='0' alt='Free Website Hit Counter'></a><br / ><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter">Free website hit counter</a></small></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<title>Coming soon</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+.style1 {
+	font-size: xx-large;
+	font-weight: bold;
+}
+-->
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<div class="mypanel"></div>
+<script type="text/javascript">
+	var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+
+
+	const KEY = "76b69cca65fe7a155fc056ceb10d274b"
+	const NAME = "fripppp"
+
+	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&period=7day", function(data) {
+        const cum = data
+        var text = cum.topalbums.album[0].image[3]["#text"]
+		$(".mypanel").html("<style>body {background-image: url('" + text + "');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;}</style>)")
+    });
+
+	
+</script>
+<div style="background-image: url('img_girl.jpg');"> 
+<body data-gr-c-s-loaded="true">
+<p class="style1" align="center">Hehe coming soon..</p>
+<p align="center"><a href="/landing"><img src="index_files/image-asset.png"></a></p>
+<p align="center">shhhh </p>
+
+
+</body></html>
