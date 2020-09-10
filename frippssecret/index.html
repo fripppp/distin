@@ -34,7 +34,7 @@
 	const KEY = "76b69cca65fe7a155fc056ceb10d274b"
 	const NAME = "fripppp"
 
-	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&period=7day", function(data) {
+	$.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&period=7day", function(data) {
         const cum = data
         var text = cum.topalbums.album[0].image[3]["#text"]
 		$(".mypanel").html("<style>body {background-image: url('" + text + "');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;}</style>)")
@@ -50,3 +50,13 @@
 
 
 </body></html>
+
+
+
+
+mel collins - radio kaos
+
+mel collins no-man wild opera
+
+
+

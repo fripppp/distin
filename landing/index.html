@@ -86,14 +86,14 @@ li {
 	const KEY = "76b69cca65fe7a155fc056ceb10d274b"
 	const NAME = "fripppp"
 
-	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&limit=1&period=7day", function(data) {
+	$.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=" + NAME + "&api_key=" + KEY + "&format=json&limit=1&period=7day", function(data) {
         const cum = data
         const MBID = cum.topalbums.album[0].mbid
 		$(".albumoftheday").html("<img src='" + cum.topalbums.album[0].image[3]["#text"] + "' width=200px height=200px>")
 		$(".albumtitle").html("<a href='" + cum.topalbums.album[0].artist.url + "''>" + cum.topalbums.album[0].artist.name + "</a> - <a href='" + cum.topalbums.album[0].url + "'>" + cum.topalbums.album[0].name + "</a>")
 		const art = cum.topalbums.album[0].artist.name
 		const al = cum.topalbums.album[0].name
-		$.getJSON("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + KEY + "&artist=" + art + "&album=" + al + "&format=json", function(data) {
+		$.getJSON("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + KEY + "&artist=" + art + "&album=" + al + "&format=json", function(data) {
         	const poop = data
         	$(".albuminfo").html(poop.album.wiki.summary)
 		});
